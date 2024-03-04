@@ -14,8 +14,9 @@ $query->execute();
 
 $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 
-
+echo "<ol>";
 foreach($posts as $post){
 
     echo "<li>".$post["title"] . "</li>"."<br>";
 }
+echo "</ol>";
