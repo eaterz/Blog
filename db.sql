@@ -9,4 +9,4 @@ title VARCHAR(255) NOT NULL
 INSERT INTO posts (title)
 VALUES
 ('My First Blog Post'),
-('My First Blog Post');
+('My Second Blog Post');
