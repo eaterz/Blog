@@ -42,3 +42,5 @@ WHERE id = 1;
 UPDATE posts
 SET category_id = (SELECT id FROM categories WHERE name = 'food')
 WHERE id = 2;
+
+SELECT * FROM posts LEFT JOIN categories ON posts.category_id = categories.id;

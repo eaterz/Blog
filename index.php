@@ -7,16 +7,7 @@ require "database.php";
 
 echo "Nikolais ir mazīnš gejs"."<br>";
 
-echo "<form>";
-echo "<input name='id'/>";
-echo "<button>Filter by ID</button>";
-echo "</form>";
 
-
-echo "<form>";
-echo "<input name='name'/>";
-echo "<button>Filter by name</button>";
-echo "</form>";
 
 
 $db = new Database($config);
@@ -32,18 +23,30 @@ if(isset($_GET["id"]) && $_GET["id"] != "" ){
     $params[":id"] = $_GET["id"];
 }
 
-if(isset($_GET["name"]) && $_GET["name"] != "" ){
+if(isset($_GET["category"]) && $_GET["category"] != "" ){
     // paņem ieprekšējo vērtību un pieliek WHERE klāt!
-    $query_string .= " LEFT JOIN categories ON posts.category_id=categories.id WHERE categories.name = :name";
-    $params[":name"] = $_GET["name"];
+    $query_string .= " LEFT JOIN categories ON posts.category_id=categories.id WHERE categories.name = :category";
+    $params[":category"] = $_GET["category"];
 }
 $posts = $db->execute($query_string, $params);
+ ?>
 
 
+<form>
+<input name='id'/>
+<button>Filter by ID</button>
+</form>
 
-echo "<ol>";
-foreach($posts as $post){
 
-    echo "<li>".$post["title"] . "</li>"."<br>";
-}
-echo "</ol>";
+<form>
+
+<input name='category'value='<?= ($_GET["category"] ?? '') ?>'/>
+<button>Filter by category</button>
+</form>
+
+<ol>
+<?php foreach($posts as $post){ ?>
+
+    <li> <?= $post["title"] ?> </li><br>
+<?php } ?>
+</ol>
