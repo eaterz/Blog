@@ -11,8 +11,9 @@
   background-color: #0056b3; /* Hover color */
 }
 
-nav {
-  display: flex;
+.link {
+  display: grid;
   justify-content: center;
   align-items: center;
+  gap: 10vh;
 }
