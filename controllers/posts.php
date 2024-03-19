@@ -26,5 +26,5 @@ if(isset($_GET["category"]) && $_GET["category"] != "" ){
 }
 $posts = $db->execute($query_string, $params);
  
-require "view/index.view.php";
+require "view/posts.view.php";
 

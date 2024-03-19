@@ -10,7 +10,8 @@
 
 
 <?php foreach($programmers as $programmer) { ?>
-  <li class="story"><?= $programmer ?></li>
+  <ul class="list-disc"><li><?= $programmer ?></li></ul>
+  
 <?php } ?>
 
 

@@ -1,19 +1,31 @@
-.nav-link {
-  padding: 10px 20px;
-  background-color: #007bff; /* Button color */
-  color: #fff; /* Text color */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #333;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease; /* Smooth color transition */
 }
 
-.nav-link:hover {
-  background-color: #0056b3; /* Hover color */
-}
-
-.link {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 10vh;
+li a:hover {
+  background-color: #111;
 }
